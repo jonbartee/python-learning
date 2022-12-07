@@ -42,3 +42,8 @@ for row in range(5):
     for col in range(5):
         print(col, end='')
     print()
+
+#print triangle of numbers
+
+for row in range(1,11):
+    print(row)
