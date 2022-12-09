@@ -80,32 +80,74 @@ import random
 # print(primes)
 
 ## Guessing game
-def guessing_game():    
-    while True:
-        answer = random.randint(1,20)
-        print(answer)
-        guess = int(input("Please guess a number between 1 and 20: "))
-        try:
-            print()
-            while guess != answer:
-                if guess < 1 or guess > 20:
-                    guess = int(input("Please guess a number between 1 and 20: "))
-                    print()
-                else:
-                    print("That's not it! Guess again!")
-                    print()
-                    guess = int(input("Please guess a number between 1 and 20: "))
-                    print()
-            else:
-                print("That's it! You Win!")
-                print()
-        except ValueError:
-            print("Oops please enter a number.")
+# def guessing_game():    
+#     while True:
+#         answer = random.randint(1,20)
+#         print(answer)
+#         guess = int(input("Please guess a number between 1 and 20: "))
+#         try:
+#             print()
+#             while guess != answer:
+#                 if guess < 1 or guess > 20:
+#                     guess = int(input("Please guess a number between 1 and 20: "))
+#                     print()
+#                 else:
+#                     print("That's not it! Guess again!")
+#                     print()
+#                     guess = int(input("Please guess a number between 1 and 20: "))
+#                     print()
+#             else:
+#                 print("That's it! You Win!")
+#                 print()
+#         except ValueError:
+#             print("Oops please enter a number.")
 
-        q = input("Do you want to play again? y/n ").lower()
+#         q = input("Do you want to play again? y/n ").lower()
 
-        if q[0] == "n":
-            break
-##END FUNCTION
+#         if q[0] == "n":
+#             break
+# ##END FUNCTION
 
-guessing_game()
+# guessing_game()
+
+## Leap year checker
+
+# def isLeapYear(x):
+#     if x % 4 == 0:
+#         if x % 100 == 0:
+#             if x % 400 == 0:
+#                 return True
+#             else: return False
+#         else: return False
+#     else: return False
+# ## END FUNCTION
+
+# years = [1992, 1600, 1900, 2000, 2002, 2020]
+
+# for year in years:
+#     x = isLeapYear(year)
+#     if x == True:
+#         print(year, "is a leap year!")
+#     else:
+#         print(year, "is not a leap year.")
+
+
+##Enumerate function
+names = ['Sam', 'Tom', 'Steve']
+
+for name in range(len(names)):
+    print(name+1, names[name])
+
+print()
+
+new = enumerate(names)
+new = list(new)
+print(new)
+
+print()
+
+for i in enumerate(names, start=1):
+    print(i) 
+
+for num, name in enumerate(names, start=1):
+    print(num, name)
