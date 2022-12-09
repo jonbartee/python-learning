@@ -24,6 +24,7 @@ import random
 #         q = input("Do you want another table? y/n ").lower()
 #         if q[0] == "n":
 #             break
+##END FUNCTION
 
 # times_table()
 
@@ -41,6 +42,7 @@ import random
 #             print()
 #             break
 #     print(x, "is a prime number!")
+##END FUNCTION
 
 # prime()
 
@@ -52,6 +54,7 @@ import random
 #         if x%i == 0:
 #             return False
 #     return True
+##END FUNCTION
 
 # testprime = [3,10,11,31,44,65,99,109]
 
@@ -70,20 +73,39 @@ import random
 #         if isprime(num):
 #             prime += 1
 #     return num
+##END FUNCTION
 
 # primes = [i for i in range(2,101) if isprime(i)]
 
 # print(primes)
 
-def guessing_game():
-    answer = random.randint(1,101)
-
+## Guessing game
+def guessing_game():    
     while True:
+        answer = random.randint(1,20)
+        print(answer)
+        guess = int(input("Please guess a number between 1 and 20: "))
         try:
-            pass
-            guess = int(input("Please guess a number between 1 and 100: "))
             print()
-
+            while guess != answer:
+                if guess < 1 or guess > 20:
+                    guess = int(input("Please guess a number between 1 and 20: "))
+                    print()
+                else:
+                    print("That's not it! Guess again!")
+                    print()
+                    guess = int(input("Please guess a number between 1 and 20: "))
+                    print()
+            else:
+                print("That's it! You Win!")
+                print()
         except ValueError:
             print("Oops please enter a number.")
-            
+
+        q = input("Do you want to play again? y/n ").lower()
+
+        if q[0] == "n":
+            break
+##END FUNCTION
+
+guessing_game()
