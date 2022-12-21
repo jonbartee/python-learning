@@ -36,10 +36,14 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 lines = os.path.join(dir_path, "SubURLs.txt")
 
 ## Open file of URLs
-ccfile = open(lines)
+ccfile = open(lines, 'r', encoding='UTF8')
 
-scribe = csv.writer(open(variables.file_name, 'w'))
-scribe.writerow(['Name', 'Job title', 'Company', 'Connections'])
+header = ['Name', 'Job title', 'Company', 'Connections']
+
+f = open('results.csv', 'w', encoding='UTF-8')
+
+scribe = csv.writer(f)
+scribe.writerow(header)
 
 ## Parse file one line at a time
 for line in ccfile:
@@ -88,5 +92,7 @@ for line in ccfile:
 
     scribe.writerow([name, job_title, company, connections])
 
-    time.sleep(10)
+    time.sleep(2)
+
+f.close()
 ccfile.close()
